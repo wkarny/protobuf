@@ -22,6 +22,8 @@ option java_outer_classname = "AddressBookProtos";
 option csharp_namespace = "Google.Protobuf.Examples.AddressBook";
 // [END csharp_declaration]
 
+option optimize_for = LITE_RUNTIME;
+
 // [START messages]
 message Person {
   string name = 1;
@@ -41,7 +43,14 @@ message Person {
 
   repeated PhoneNumber phones = 4;
 
-  google.protobuf.Timestamp last_updated = 5;
+  // oneof employment {
+  //   bool unemployed = 5;
+  //   string employer = 6;
+  //   string school = 7;
+  //   bool self_employed = 8;
+  // }
+
+  google.protobuf.Timestamp last_updated = 9;
 }
 
 // Our address book file is just one of these.
